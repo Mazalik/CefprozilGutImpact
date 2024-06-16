@@ -14,7 +14,6 @@ This project focuses on analyzing how Cefprozil affects gut microbiota. It inclu
 ## Data
 The analysis is based on the data collected from adults aged 21-35 with regular intestinal transit. The data includes:
 - `txt` files containing metadata.
-- `csv` files containing relative abundance data of bacterial families.
 
 ## Analysis
 The analysis involves the following steps:
@@ -37,7 +36,7 @@ To run the code, follow these steps:
     git clone https://github.com/Mazalik/CefprozilGutImpact.git
     cd CefprozilGutBiome
     ```
-2. Provide the data files (`txt` and `csv`) in the appropriate directories.
+2. Provide the data files (`txt`) in the appropriate directories.
 3. Run the analysis script and specify the input and output directories:
     ```bash
     python analyze_cefprozil_effect.py --input_dir path/to/input_files --output_dir path/to/save_results
