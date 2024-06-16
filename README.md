@@ -30,8 +30,6 @@ To use this program, you need to install a few libraries. Use the provided `requ
 pip install -r requirements.txt
 ```
 
-```
-
 ## Usage
 To run the code, follow these steps:
 1. Clone the repository:
