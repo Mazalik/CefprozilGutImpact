@@ -47,6 +47,17 @@ The results will be saved in the specified output directory and include:
 - `bar_plot.png`: A bar plot representing the relative abundance of bacterial families.
 - `boxplots.png`: Boxplots showing the changes in relative abundance of the most affected bacterial families.
 
+## Tests
+This project includes tests to validate the functionality of the data preprocessing, analysis, and visualization scripts. Tests cover:
+- Data loading and validation.
+- Correct generation of bar plots and boxplots.
+- Accuracy of statistical calculations (if applicable).
+
+To run the tests, use the following command:
+```bash
+pytest
+```
+
 ## References
 1. D’Argenio, V. & Salvatore, F. The role of the gut microbiome in the healthy adult status. Clinica Chimica Acta 451, 97–102 (2015).
 2. Shreiner, A. B. et al. Dicer (E-7): sc-393328. Cell 69, 393328 (2015).
