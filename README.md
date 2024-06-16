@@ -55,7 +55,7 @@ The results will be saved in the specified output directory and include:
 
 2. Shreiner, A. B. et al. Dicer (E-7): sc-393328. Cell 69, 393328 (2015).
 
-3. Konstantinidis, T. et al. Effects of antibiotics upon the gut microbiome: A review of the literature. Biomedicines vol. 8 1–15 Preprint at https://doi.org/10.3390/biomedicines8110502 (2020).
+3. Konstantinidis, T. et al. Effects of antibiotics upon the gut microbiome: A review of the literature. Biomedicines vol. 8 1–15 Preprint at <https://doi.org/10.3390/biomedicines8110502> (2020).
 
 4. Weersma, R. K., Zhernakova, A. & Fu, J. Interaction between drugs and the gut microbiome. Gut 69, 1510–1519 (2020).
 
