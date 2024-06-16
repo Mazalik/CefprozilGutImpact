@@ -49,7 +49,7 @@ The results will be saved in the specified output directory and include:
 - `boxplots.png`: Boxplots showing the changes in relative abundance of the most affected bacterial families.
 
 ## References
-<small>
+<sub>
 1. D’Argenio, V. & Salvatore, F. The role of the gut microbiome in the healthy adult status. Clinica Chimica Acta 451, 97–102 (2015).
 2. Shreiner, A. B. et al. Dicer (E-7): sc-393328. Cell 69, 393328 (2015).
 3. Konstantinidis, T. et al. Effects of antibiotics upon the gut microbiome: A review of the literature. Biomedicines vol. 8 1–15 Preprint at https://doi.org/10.3390/biomedicines8110502 (2020).
@@ -60,7 +60,7 @@ The results will be saved in the specified output directory and include:
 8. Dai, D. et al. ‘GMrepo v2: a curated human gut microbiome database with special focus on disease markers and cross-dataset comparison’. Nucleic Acids Res (2022). Volume 50, Issue D1, Pages D777– D784.
 9. Iredell, J., Brown, J. & Tagg, K. Antibiotic resistance in Enterobacteriaceae: Mechanisms and clinical implications. BMJ (Online) 352, (2016).
 10. Knecht, H. et al. Effects of b-lactam antibiotics and fluoroquinolones on human gut microbiota in relation to clostridium difficile associated diarrhea. PLoS One 9, 1–8 (2014).
-</small>
+</sub>
 
 ## Acknowledgments
 This project was originally implemented as part of the Python programming course at the Weizmann Institute of Science taught by Gabor Szabo.
