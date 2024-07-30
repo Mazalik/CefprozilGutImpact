@@ -39,13 +39,14 @@ To run the code, follow these steps:
 2. Provide the data files (`txt`) in the appropriate directories.
 3. Run the analysis script and specify the input and output directories:
     ```bash
-    python analyze_cefprozil_effect.py --input_dir path/to/input_files --output_dir path/to/save_results
+    python analyze_cefprozil_effect.py path/to/input_files path/to/save_results
     ```
 
 ## Results
-The results will be saved in the specified output directory and include:
-- `bar_plot.png`: A bar plot representing the relative abundance of bacterial families.
-- `boxplots.png`: Boxplots showing the changes in relative abundance of the most affected bacterial families.
+The analysis will produce several output files in the specified output directory:
+- `relative_abundance_plot.png`: A bar plot representing the relative abundance of bacterial families.
+- `families_exposed_plot.png`: A plot showing the abundance of bacterial families for each family at different time points for the exposed patients. 
+- `combined_family_<family_name>_plot.png`: Plots showing the combined data only for the significantly changed families from both control and exposed groups.
 
 ## Tests
 This project includes tests to validate the functionality of the data preprocessing, analysis, and visualization scripts. Tests cover:
