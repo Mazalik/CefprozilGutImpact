@@ -14,6 +14,7 @@ This project focuses on analyzing how Cefprozil affects gut microbiota. It inclu
 ## Data
 The analysis is based on the data collected from adults aged 21-35 with regular intestinal transit. The data includes:
 - `txt` files containing metadata.
+- `csv` files containing additional information.
 
 ## Analysis
 The analysis involves the following steps:
