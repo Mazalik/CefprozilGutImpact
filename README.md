@@ -51,8 +51,8 @@ The analysis will produce several output files in the specified output directory
 ## Tests
 This project includes tests to validate the functionality of the data preprocessing, analysis, and visualization scripts. Tests cover:
 - Data loading and validation.
-- Correct generation of bar plots and boxplots.
-- Accuracy of statistical calculations (if applicable).
+- Generation of bar plots and boxplots.
+
 
 To run the tests, use the following command:
 ```bash
