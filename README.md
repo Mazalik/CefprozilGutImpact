@@ -16,7 +16,7 @@ The analysis is based on the data collected from adults aged 21-35 with regular 
 - `txt` files containing metadata.
 - `csv` files containing additional information.
 
-> ⚠️ **Warning**: For running the analysis, you will need an additional file called `species_abundance.txt`, which you can download from the following link:
+> ⚠️ **Notice**: For running the analysis, you will need an additional file called `species_abundance.txt`, which you can download from the following link:
 >[Download species_abundance.txt](https://weizmannacil-my.sharepoint.com/:t:/g/personal/mazal_faraj_weizmann_ac_il/EUWcfyyO1tZDtrLV-xRFpBsBnFHhx8wEcHK_O0Lv3VXhNw?e=dTES8q)
 
 ## Analysis
