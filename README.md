@@ -40,7 +40,7 @@ To run the code, follow these steps:
     git clone https://github.com/Mazalik/CefprozilGutImpact.git
     cd CefprozilGutBiome
     ```
-2. Provide the data files (`txt`) in the appropriate directories.
+2. Ensure you have all the necessary files from the input_files directory and the link provided, placing them together in a single folder as desired.
 3. Run the analysis script and specify the input and output directories:
     ```bash
     python analyze_cefprozil_effect.py path/to/input_files path/to/save_results
