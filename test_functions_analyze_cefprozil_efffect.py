@@ -1,13 +1,16 @@
 import functions_analyze_cefprozil_effect as fn
 import pandas as pd
 import os
+import pytest
 
 def get_test_directory():
     return os.path.dirname(os.path.abspath(__file__))
 
+input_files_dir = os.path.join(get_test_directory(), "input_files")
+file_exists = os.path.exists(os.path.join(input_files_dir, "species_abundance.txt"))
 
+@pytest.mark.skipif(not file_exists, reason="species_abundance.txt not found in input_files directory")
 def test_get_raw_data():
-    input_files_dir = os.path.join(get_test_directory(), "input_files")
     sys_argv = ["analyze_cefprozil_effect.py", input_files_dir]
     samples_loaded, superkingdom, species_abundance, project, families_table = fn.get_raw_data(sys_argv)
     #samples_loaded, superkingdom, species_abundance, project = fn.get_raw_data(sys_argv)
@@ -67,9 +70,8 @@ def test_output_files_creation():
         file_path = os.path.join(output_folder, file)
         assert os.path.exists(file_path), f"File not found: {file}"
 
-
+@pytest.mark.skipif(not file_exists, reason="species_abundance.txt not found in input_files directory")
 def test_no_null_values():
-    input_files_dir = os.path.join(get_test_directory(), "input_files")
     samples_loaded, superkingdom, species_abundance, project, families_table = fn.get_raw_data(["analyze_cefprozil_effect.py", input_files_dir])
     selected_project_data = fn.filter_project(project)
     selected_project_w_accession = fn.add_accession_id(samples_loaded, selected_project_data)
@@ -79,9 +81,8 @@ def test_no_null_values():
     species_abundance_family = fn.add_family(species_abundance_w_sample_name, families_table)
     assert species_abundance_family.isnull().sum().sum() == 0, "Null values found in the processed data"
 
-
+@pytest.mark.skipif(not file_exists, reason="species_abundance.txt not found in input_files directory")
 def test_data_types():
-    input_files_dir = os.path.join(get_test_directory(), "input_files")
     samples_loaded, superkingdom, species_abundance, project, families_table = fn.get_raw_data(["analyze_cefprozil_effect.py", input_files_dir])
     selected_project_data = fn.filter_project(project)
     selected_project_w_accession = fn.add_accession_id(samples_loaded, selected_project_data)
