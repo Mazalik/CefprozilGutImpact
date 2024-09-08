@@ -137,7 +137,8 @@ def relative_abundance_plot(species_relative_abundance, sys_argv):
     # relative_abundance_plot.show()
 
 
-def add_patient_info(species_relative_abundance):
+def add_patient_info(species_relative_abundance, sys_argv):
+    files_path = sys_argv[1]
     species_abundance_avg_tagged = species_relative_abundance.copy()
     # Extract patient information
     species_abundance_avg_tagged['patient'] = species_abundance_avg_tagged['sample_name'].str.replace(r'E.*', '', regex=True)
@@ -146,7 +147,8 @@ def add_patient_info(species_relative_abundance):
     species_abundance_avg_tagged['timepoint'] = species_abundance_avg_tagged['sample_name'].str.replace(r'.*E', '', regex=True)
     species_abundance_avg_tagged['timepoint'] = species_abundance_avg_tagged['timepoint'].str.replace(r'.*C', '', regex=True)
     # Read patient info CSV
-    patient_info = pd.read_csv("patient_info.csv")
+    #patient_info = pd.read_csv("patient_info.csv")
+    patient_info = pd.read_csv(f"{files_path}/patient_info.csv")
     # Merge the DataFrames
     species_abundance_avg_tagged = pd.merge(species_abundance_avg_tagged, patient_info, how='left')
     return species_abundance_avg_tagged

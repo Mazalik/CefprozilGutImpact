@@ -2,15 +2,20 @@ import functions_analyze_cefprozil_effect as fn
 import pandas as pd
 import os
 
-# def test_get_raw_data():
-#     # Test loading data with correct paths
-#     sys_argv = ["analyze_cefprozil_effect.py", "C:\\work\\python\\project"] ###update!###
-#     samples_loaded, superkingdom, species_abundance, project, families_table = fn.get_raw_data(sys_argv)
-#     assert isinstance(samples_loaded, pd.DataFrame)
-#     assert isinstance(superkingdom, pd.DataFrame)
-#     assert isinstance(species_abundance, pd.DataFrame)
-#     assert isinstance(project, pd.DataFrame)
-#     assert isinstance(families_table, pd.DataFrame)
+def get_test_directory():
+    return os.path.dirname(os.path.abspath(__file__))
+
+
+def test_get_raw_data():
+    input_files_dir = os.path.join(get_test_directory(), "input_files")
+    sys_argv = ["analyze_cefprozil_effect.py", input_files_dir]
+    samples_loaded, superkingdom, species_abundance, project, families_table = fn.get_raw_data(sys_argv)
+    #samples_loaded, superkingdom, species_abundance, project = fn.get_raw_data(sys_argv)
+    assert isinstance(samples_loaded, pd.DataFrame)
+    assert isinstance(superkingdom, pd.DataFrame)
+    assert isinstance(species_abundance, pd.DataFrame)
+    assert isinstance(project, pd.DataFrame)
+    assert isinstance(families_table, pd.DataFrame)
 
 def test_filter_project():
     # Test filtering project data
@@ -63,27 +68,29 @@ def test_output_files_creation():
         assert os.path.exists(file_path), f"File not found: {file}"
 
 
-# def test_no_null_values():
-#     samples_loaded, superkingdom, species_abundance, project, families_table = fn.get_raw_data(["analyze_cefprozil_effect.py", "C:\\work\\python\\project"]) ####לעדכן####
-#     selected_project_data = fn.filter_project(project)
-#     selected_project_w_accession = fn.add_accession_id(samples_loaded, selected_project_data)
-#     species_abundance_kingdom = fn.add_kingdom(species_abundance, superkingdom)
-#     filtered_species_abundance = fn.filter_species_abundance(selected_project_w_accession, species_abundance_kingdom)
-#     species_abundance_w_sample_name = fn.match_sample_name(selected_project_w_accession, filtered_species_abundance)
-#     species_abundance_family = fn.add_family(species_abundance_w_sample_name, families_table)
-#     assert species_abundance_family.isnull().sum().sum() == 0, "Null values found in the processed data"
+def test_no_null_values():
+    input_files_dir = os.path.join(get_test_directory(), "input_files")
+    samples_loaded, superkingdom, species_abundance, project, families_table = fn.get_raw_data(["analyze_cefprozil_effect.py", input_files_dir])
+    selected_project_data = fn.filter_project(project)
+    selected_project_w_accession = fn.add_accession_id(samples_loaded, selected_project_data)
+    species_abundance_kingdom = fn.add_kingdom(species_abundance, superkingdom)
+    filtered_species_abundance = fn.filter_species_abundance(selected_project_w_accession, species_abundance_kingdom)
+    species_abundance_w_sample_name = fn.match_sample_name(selected_project_w_accession, filtered_species_abundance)
+    species_abundance_family = fn.add_family(species_abundance_w_sample_name, families_table)
+    assert species_abundance_family.isnull().sum().sum() == 0, "Null values found in the processed data"
 
 
-# def test_data_types():
-#     samples_loaded, superkingdom, species_abundance, project, families_table = fn.get_raw_data(["analyze_cefprozil_effect.py", "C:\\work\\python\\project"])####לעדכן####
-#     selected_project_data = fn.filter_project(project)
-#     selected_project_w_accession = fn.add_accession_id(samples_loaded, selected_project_data)
-#     species_abundance_kingdom = fn.add_kingdom(species_abundance, superkingdom)
-#     filtered_species_abundance = fn.filter_species_abundance(selected_project_w_accession, species_abundance_kingdom)
-#     species_abundance_w_sample_name = fn.match_sample_name(selected_project_w_accession, filtered_species_abundance)
-#     species_abundance_family = fn.add_family(species_abundance_w_sample_name, families_table)
-#     assert species_abundance_family['relative_abundance'].dtype == float, "Relative abundance column is not of type float"
-#     assert species_abundance_family['family'].dtype == object, "Family column is not of type object"
+def test_data_types():
+    input_files_dir = os.path.join(get_test_directory(), "input_files")
+    samples_loaded, superkingdom, species_abundance, project, families_table = fn.get_raw_data(["analyze_cefprozil_effect.py", input_files_dir])
+    selected_project_data = fn.filter_project(project)
+    selected_project_w_accession = fn.add_accession_id(samples_loaded, selected_project_data)
+    species_abundance_kingdom = fn.add_kingdom(species_abundance, superkingdom)
+    filtered_species_abundance = fn.filter_species_abundance(selected_project_w_accession, species_abundance_kingdom)
+    species_abundance_w_sample_name = fn.match_sample_name(selected_project_w_accession, filtered_species_abundance)
+    species_abundance_family = fn.add_family(species_abundance_w_sample_name, families_table)
+    assert species_abundance_family['relative_abundance'].dtype == float, "Relative abundance column is not of type float"
+    assert species_abundance_family['family'].dtype == object, "Family column is not of type object"
 
 
 

@@ -37,7 +37,7 @@ def main():
     fn.relative_abundance_plot(species_relative_abundance,sys.argv)
 
     #2nd analysis - difference between time points (for each family)
-    species_abundance_avg_tagged = fn.add_patient_info(species_relative_abundance)
+    species_abundance_avg_tagged = fn.add_patient_info(species_relative_abundance, sys.argv)
     control_data = fn.get_control_data(species_abundance_avg_tagged)
     exposed_data = fn.get_exposed_data(species_abundance_avg_tagged)
     significant_families_exposed = fn.plot_families_aboundance(exposed_data, "exposed", sys.argv)
