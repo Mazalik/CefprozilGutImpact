@@ -64,6 +64,12 @@ To run the tests, use the following command:
 pytest
 ```
 
+Some tests, such as `test_get_raw_data`, `test_no_null_values`, and `test_data_types`, are conditionally skipped if the `species_abundance.txt` file is missing in the `input_files` directory. These tests rely on this file to run successfully, and will be automatically skipped if it's not available. The reason for skipping will be shown in the test output if you run the tests using:
+```bash
+pytest -rs
+```
+
+
 ## References
 1. D’Argenio, V. & Salvatore, F. The role of the gut microbiome in the healthy adult status. Clinica Chimica Acta 451, 97–102 (2015).
 2. Shreiner, A. B. et al. Dicer (E-7): sc-393328. Cell 69, 393328 (2015).
