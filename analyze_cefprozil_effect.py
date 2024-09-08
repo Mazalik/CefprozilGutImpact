@@ -10,6 +10,19 @@ import os
 
 
 def main():
+    #Checking if the required arguments are provided
+    if len(sys.argv) < 3:
+        print("Error: Missing input directory or output directory.")
+        print("Usage: python analyze_cefprozil_effect.py <path/to/input_files> <path/to/save_results>")
+        print("Please provide the paths to the input files directory and the directory to save results.")
+        sys.exit(1)
+    
+    if len(sys.argv) > 3:
+        print("Error: Too many arguments provided.")
+        print("Usage: python analyze_cefprozil_effect.py <path/to/input_files> <path/to/save_results>")
+        print("Please provide only the paths to the input files directory and the directory to save results.")
+        sys.exit(1)
+    
 
     #Getting the raw data and the project data
     samples_loaded, superkingdom, species_abundance, project,families_table = fn.get_raw_data(sys.argv)
