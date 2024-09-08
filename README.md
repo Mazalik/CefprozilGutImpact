@@ -41,7 +41,7 @@ To run the code, follow these steps:
     cd CefprozilGutBiome
     ```
 2. Ensure you have all the necessary files from the input_files directory and the link provided, placing them together in a single folder named "input_files".
-3. Make sure both csv files and the `species_abundance.txt` file are also in the "input_files" filder. 
+3. Make sure both csv files and the `species_abundance.txt` file are also in the "input_files" folder. 
 4. Run the analysis script and specify the input and output directories:
     ```bash
     python analyze_cefprozil_effect.py path/to/input_files path/to/save_results
