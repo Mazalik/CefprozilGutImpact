@@ -7,9 +7,16 @@ import sys
 from pandas.api.types import CategoricalDtype
 from scipy.stats import ttest_ind, f_oneway
 import os
+import warnings
 
 
 def main():
+
+    #Known warnings to ignore
+    warnings.filterwarnings("ignore", category=UserWarning, module='plotnine')
+    warnings.filterwarnings("ignore", category=RuntimeWarning)
+    warnings.filterwarnings("ignore", category=FutureWarning)
+
     #Checking if the required arguments are provided
     if len(sys.argv) < 3:
         print("Error: Missing input directory or output directory.")
